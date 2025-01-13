@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criador De Ordens</title>
+    <link href="index.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form id="form_preencher" class="form_preencher">
+      <h1>Criador de Ordens</h1>
+
+      <div class="container_numero_pedido">
+        <label for="pedido">Número de Pedido:</label>
+        <input id="pedido" name="pedido" type="text" required />
+      </div>
+      <div class="container_empresas_secao">
+        <label for="empresa">Empresa de Envio:</label>
+        <div class="container_empresas">
+          <img
+            src="../IMG/Correios_icon.png"
+            alt="correios"
+            id="correios"
+            class="empresas_icon"
+            onclick="empresa_selecionado('Correios', this)"
+          />
+          <img
+            src="../IMG/Gol_icon.jpeg"
+            alt="gol"
+            id="gol"
+            class="empresas_icon"
+            onclick="empresa_selecionado('Gol', this)"
+          />
+          <img
+            src="../IMG/Rodonaves_icon.jpeg"
+            alt="rodonaves"
+            id="rodonaves"
+            class="empresas_icon"
+            onclick="empresa_selecionado('Rodonaves', this)"
+          />
+          <img
+            src="../IMG/ExpressoSaoMiguel_icon.jpeg"
+            alt="Expresso Sao Miguel"
+            id="expresso sao miguel"
+            class="empresas_icon"
+            onclick="empresa_selecionado('Expresso Sao Miguel', this)"
+          />
+        </div>
+      </div>
+      <div class="container-data-envio">
+        <div class="container-data">
+          <label for="envio">Data de Envio:</label>
+          <input id="envio" name="envio" type="date" required />
+        </div>
+        <div class="container-status">
+          <label for="entregue"> Entregue ? </label>
+          <input id="entregue" name="entregue" type="checkbox" />
+        </div>
+      </div>
+      <button id="btn" class="btn-submit" name="btn" type="submit">
+        Salvar em Planilha
+      </button>
+    </form>
+
+    <div id="loading-overlay">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="popup" class="popup">
+      <p id="popupMessage">Mensagem enviada com sucesso!</p>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

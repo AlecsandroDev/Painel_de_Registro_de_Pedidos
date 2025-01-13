@@ -1,0 +1,269 @@
+:root {
+  --form-control-color: white;
+  --form-control-disabled: white;
+  --font-color: white;
+  --btn-color: rgb(67, 124, 255);
+  --btn-color-hover: rgb(41, 90, 204);
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("../Font-Family/JetBrainsMono-Bold.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #545c7c;
+}
+
+h1 {
+  font-family: "JetBrainsMono";
+  color: var(--font-color);
+  user-select: none;
+}
+
+label {
+  font-family: "JetBrainsMono";
+  color: var(--font-color);
+  user-select: none;
+}
+
+input {
+  font-family: "JetBrainsMono";
+  color: var(--font-color);
+  background-color: transparent;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 2px solid var(--font-color);
+  caret-color: var(--font-color);
+  cursor: pointer;
+}
+
+input:focus {
+  user-select: none;
+  outline: none;
+  cursor: text;
+}
+
+img {
+  background-color: var(--font-color);
+  user-select: none;
+}
+
+.form_preencher {
+  display: grid;
+  place-items: center;
+  transform: scale(1.3);
+  margin-top: 100px;
+}
+
+.container_numero_pedido {
+  height: 75px;
+  width: 40%;
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.container_empresas_secao {
+  height: 120px;
+  width: 40%;
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.container_empresas {
+  height: 100px;
+  width: 90vw;
+  margin: 10 0 0 0;
+  padding: 0 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.empresas_icon {
+  height: 64px;
+  width: 64px;
+  margin: 10px 10px 0 0;
+  padding: 0 0;
+  border-radius: 10px;
+  border: 3px solid var(--font-color);
+  transition-duration: 250ms;
+}
+
+.empresas_icon:hover {
+  height: 80px;
+  width: 80px;
+  margin-top: 2.5px;
+  border-radius: 10px;
+  transition-duration: 250ms;
+}
+
+.empresas_icon:active {
+  transform: scale(0.95);
+}
+
+.empresas_icon.selected {
+  outline: max(2px, 0.15em) solid var(--font-color);
+  outline-offset: max(2px, 0.15em);
+}
+
+.container-data-envio {
+  height: 75px;
+  width: 40%;
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container-data > input {
+  width: 200px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.container-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--font-color);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  height: 50px;
+  width: 200px;
+  margin: 20px;
+  background-color: var(--btn-color);
+  color: var(--font-color);
+  border-radius: 10px;
+  border: None;
+  font-family: "JetBrainsMono";
+  transition: 500ms;
+}
+
+.btn-submit:hover {
+  background-color: var(--btn-color-hover);
+  transform: scale(1.05);
+  transition: 500ms;
+}
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+}
+
+#loading-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  transition: 500ms;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  font-family: "JetBrainsMono";
+  user-select: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+.popup.hide {
+  opacity: 0;
+}
