@@ -1,7 +1,7 @@
 # **Painel de Registro de Pedidos**
 
 Esse projeto se desenvolve na parte de registro de pedidos, utilizando o Google Planilhas, através da API da Google Cloud Console,
-fazendo com que seja possível realizar o registro de pedidos de forma mais efieciente, a fim de otimizar tempo.
+fazendo com que seja possível realizar o registro de pedidos de forma mais eficiente, a fim de otimizar tempo.
 
 <hr> 
 
@@ -19,7 +19,7 @@ fazendo com que seja possível realizar o registro de pedidos de forma mais efie
 
 <hr> 
 
-O projeto acompanha um arquivo **requirements.txt**, que pode ser instalado executando o comandos: 
+O projeto acompanha um arquivo **requirements.txt**, que pode ser instalado executando o comando: 
 
     pip install -r requirements.txt
     
