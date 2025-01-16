@@ -1,4 +1,4 @@
-# **Painel de Importação de Pedidos**
+# **Painel de Registro de Pedidos**
 
 Esse projeto tem como objetivo realizar o envio de pedidos diretamente a planilha do Google atráves da API da Google Cloud.
 
